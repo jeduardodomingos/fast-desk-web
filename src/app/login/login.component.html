@@ -1,0 +1,23 @@
+<form  class="form-signin">
+    <div class="text-center">
+        <h1 class="h3 mb-6 font-weight-normal">Acesso Restrito</h1>
+    </div>
+
+      <app-validate-input label="E-mail" errorMessage="O e-mail informado não é válido.">
+        <input type="email" name="userName" autofocus="true" class="form-control" placeholder="Endereço de Email" required pattern='^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$'/>
+      </app-validate-input>
+
+      <app-validate-input label="Senha" errorMessage="A senha informada não é válida.">
+        <input name="userPassword" class="form-control" placeholder="Senha" required />
+      </app-validate-input>    
+
+    <div class="input-group mt-4">
+      <div class="checkbox mt-0">
+        <label>
+          <input type="checkbox" value="lembrar"> Lembrar
+        </label>
+      </div>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block mt-4" type="submit">Login</button>
+    <p class="mt-4 text-muted">©CompuUnifaj 2019</p>
+</form>
