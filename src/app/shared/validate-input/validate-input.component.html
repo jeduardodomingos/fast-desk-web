@@ -1,5 +1,5 @@
 <div class="form-group mt-4" [class.has-success]="hasSuccess()" [class.has-error]="hasError()">
-    <label [for]="this.targetInput.name">{{this.label}}</label>
+    <label >{{label}}</label>
     <ng-content></ng-content>
     <span class="help-block" *ngIf="hasError();">{{this.errorMessage}}&nbsp;&nbsp;<i class="fa fa-warning"></i></span>
 </div>
