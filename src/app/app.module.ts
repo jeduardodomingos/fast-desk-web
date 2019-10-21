@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { ValidateInputComponent } from './shared/validate-input/validate-input.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ValidateInputComponent
+    ValidateInputComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
