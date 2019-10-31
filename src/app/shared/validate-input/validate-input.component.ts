@@ -20,17 +20,18 @@ export class ValidateInputComponent implements OnInit, AfterContentInit {
 
   ngAfterContentInit(): void {
     this.targetInput = this.model;
-      
+     
     if (this.targetInput === undefined) {
-     // throw new Error('This component need used with a NgModel directive.');
+      throw new Error('This component need used with a NgModel directive.');
     }
+    
   }
 
   hasSuccess(): any {
-   // return this.targetInput.valid && (this.targetInput.touched || this.targetInput.dirty);
+    return this.targetInput.valid && (this.targetInput.touched || this.targetInput.dirty);
   }
 
   hasError(): any {
-   // return !this.targetInput.valid && (this.targetInput.touched || this.targetInput.dirty);
+    return !this.targetInput.valid && (this.targetInput.touched || this.targetInput.dirty);
   }
 }
