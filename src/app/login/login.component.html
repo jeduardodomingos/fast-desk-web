@@ -1,13 +1,15 @@
 <form  class="form-signin">
     <div class="text-center">
-        <h1 class="h3 mb-6 font-weight-normal">Acesso Restrito</h1>
+        <h1 class="h3 mb-6 font-weight-normal"><b>Acesso Restrito</b></h1>
     </div>
 
-      <app-validate-input label="E-mail" errorMessage="O e-mail informado não é válido.">
+      <app-validate-input errorMessage="O e-mail informado não é válido.">
+        <label for="userName">E-mail</label>
         <input ngModel name="userName" autofocus="true" class="form-control" placeholder="Endereço de Email" required pattern='^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$'/>
       </app-validate-input>
 
-      <app-validate-input label="Senha" errorMessage="A senha informada não é válida.">
+      <app-validate-input errorMessage="A senha informada não é válida.">
+        <label for="password">Senha</label>
         <input ngModel name="password" class="form-control" placeholder="Senha" required />
       </app-validate-input>    
 

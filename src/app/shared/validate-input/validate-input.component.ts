@@ -8,7 +8,6 @@ import { NgModel } from '@angular/forms';
 })
 export class ValidateInputComponent implements OnInit, AfterContentInit {
 
-  @Input() label: string;
   @Input() errorMessage: string;
   @ContentChild(NgModel, {static: false}) model: NgModel;
 
