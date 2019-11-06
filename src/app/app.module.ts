@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { ValidateInputComponent } from './shared/validate-input/validate-input.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { HeaderComponent } from './header/header.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpModule,
     FormsModule
   ],
   providers: [],

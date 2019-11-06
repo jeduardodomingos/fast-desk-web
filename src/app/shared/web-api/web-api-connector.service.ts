@@ -6,7 +6,7 @@ import {Http, Response} from '@angular/http';
 })
 export class WebApiConnectorService {
 
-  private sourceServiceUrl: string = "http://127.0.0.1/api/";
+  private sourceServiceUrl: string = "http://localhost:3000/api/";
 
   constructor(private httpClient: Http) { }
 
