@@ -11,7 +11,9 @@ export class LoginService {
   constructor(private apiConnector: WebApiConnectorService) { }
 
   login(email: string, password: string): Observable<any> {
-    return this.apiConnector.getUrl(`login/${email}/${sha256(email + password)}`);
+    return this.apiConnector.getUrl(`login/${email}/${sha256(email + password)}`).subscribe((response) => {
+      
+    });
   }
 
 }

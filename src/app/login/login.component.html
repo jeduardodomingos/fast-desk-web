@@ -1,16 +1,16 @@
-<form  class="form-signin">
+<form [formGroup]="loginForm" (submit)="login();" class="form-signin">
     <div class="text-center">
         <h1 class="h3 mb-6 font-weight-normal"><b>Acesso Restrito</b></h1>
     </div>
 
       <app-validate-input errorMessage="O e-mail informado não é válido.">
-        <label for="userName">E-mail</label>
-        <input ngModel name="userName" autofocus="true" class="form-control" placeholder="Endereço de Email" required pattern='^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$'/>
+        <label for="userEmail">E-mail</label>
+        <input formControlName="userEmail" autofocus="true" class="form-control" placeholder="Endereço de Email"/>
       </app-validate-input>
 
       <app-validate-input errorMessage="A senha informada não é válida.">
         <label for="password">Senha</label>
-        <input ngModel name="password" class="form-control" placeholder="Senha" required />
+        <input formControlName="userPassword" type="password" class="form-control" placeholder="Senha"/>
       </app-validate-input>    
 
     <div class="input-group mt-4">
@@ -20,7 +20,7 @@
         </label>
       </div>
     </div>
-    <button class="btn btn-lg btn-primary btn-block mt-4" (click)="loginGo();" type="submit">Login</button>
+    <button class="btn btn-lg btn-primary btn-block mt-4" type="submit">Login</button>
     <button class="btn btn-lg btn-success btn-block mt-4" type="submit">Registre-se</button>
     <p class="mt-4 text-muted">©Techsolution Informática 2019</p>
 </form>
