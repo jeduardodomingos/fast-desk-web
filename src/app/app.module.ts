@@ -9,6 +9,7 @@ import { ValidateInputComponent } from './shared/validate-input/validate-input.c
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { HttpModule } from '@angular/http';
+import { MainPageComponent } from './main-page/main-page.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HttpModule } from '@angular/http';
     LoginComponent,
     ValidateInputComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,

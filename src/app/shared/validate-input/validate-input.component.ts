@@ -9,6 +9,7 @@ import { NgModel, FormControlName } from '@angular/forms';
 export class ValidateInputComponent implements OnInit, AfterContentInit {
 
   @Input() errorMessage: string;
+  @Input() notificationLabelColor: string;
   @ContentChild(NgModel, {static: false}) model: NgModel;
   @ContentChild(FormControlName, {static: false}) control: FormControlName;
 
@@ -33,5 +34,13 @@ export class ValidateInputComponent implements OnInit, AfterContentInit {
 
   hasError(): any {
     return !this.targetInput.valid && (this.targetInput.touched || this.targetInput.dirty);
+  }
+
+  lightSpanColor(): boolean {
+    return this.notificationLabelColor == "light" ? true : false;
+  }
+
+  darkSpanColor(): boolean {
+    return this.notificationLabelColor == "dark" ? true : false;
   }
 }

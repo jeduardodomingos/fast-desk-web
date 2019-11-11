@@ -1,14 +1,16 @@
+<app-header></app-header>
+
 <form [formGroup]="loginForm" (submit)="login();" class="form-signin">
     <div class="text-center">
         <h1 class="h3 mb-6 font-weight-normal"><b>Acesso Restrito</b></h1>
     </div>
 
-      <app-validate-input errorMessage="O e-mail informado não é válido.">
+      <app-validate-input notificationLabelColor="light" errorMessage="O e-mail informado não é válido.">
         <label for="userEmail">E-mail</label>
         <input formControlName="userEmail" autofocus="true" class="form-control" placeholder="Endereço de Email"/>
       </app-validate-input>
 
-      <app-validate-input errorMessage="A senha informada não é válida.">
+      <app-validate-input notificationLabelColor="light" errorMessage="A senha informada não é válida.">
         <label for="password">Senha</label>
         <input formControlName="userPassword" type="password" class="form-control" placeholder="Senha"/>
       </app-validate-input>    
@@ -16,7 +18,7 @@
     <div class="input-group mt-4">
       <div class="checkbox mt-0">
         <label>
-          <input type="checkbox" value="lembrar"> Lembrar
+          <input formControlName="rememberEmail" type="checkbox" value="lembrar"> Lembrar
         </label>
       </div>
     </div>

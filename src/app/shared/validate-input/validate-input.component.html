@@ -1,4 +1,4 @@
 <div class="form-group mt-4" [class.has-success]="hasSuccess()" [class.has-error]="hasError()">
     <ng-content></ng-content>
-    <span class="help-block" *ngIf="hasError();">{{this.errorMessage}}&nbsp;&nbsp;<i class="fa fa-warning"></i></span>
+    <span class="help-block" *ngIf="hasError();" [class.light-span-color]="lightSpanColor()" [class.dark-span-color]="darkSpanColor()">{{this.errorMessage}}&nbsp;&nbsp;<i class="fa fa-warning"></i></span>
 </div>
