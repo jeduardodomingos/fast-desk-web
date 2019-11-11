@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import * as sha256 from 'sha256';
 import { LoginModel } from './login.model';
 import { UserModel } from '../shared/model/user.model';
+import { SessionVariables } from '../shared/enum/session-variables';
 
 @Injectable({
   providedIn: 'root'
@@ -29,10 +30,10 @@ export class LoginService {
         new Date()
       );
 
-      sessionStorage.setItem('user-session-fastdesk', JSON.stringify(loginModel));
+      sessionStorage.setItem(SessionVariables.USER_SESSION, JSON.stringify(loginModel));
       
       if(remember) {
-        localStorage.setItem('user-data-email-fastdesk', email);
+        localStorage.setItem(SessionVariables.USER_DATA_EMAIL, email);
       }
 
       }catch(ex) {

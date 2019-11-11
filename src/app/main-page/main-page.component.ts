@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Renderer2 } from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer2, OnDestroy } from '@angular/core';
 import { MainPageService } from './main-page.service';
 import Swal from 'sweetalert2';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -8,7 +8,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.css']
 })
-export class MainPageComponent implements OnInit {
+export class MainPageComponent implements OnInit, OnDestroy {
 
   constructor(private mainPageService: MainPageService, 
               private router: Router, 
@@ -19,6 +19,10 @@ export class MainPageComponent implements OnInit {
   ngOnInit() {
     this.setBodyBakcground();
     this.checkLoggedOn();
+  }
+
+  ngOnDestroy() {
+    this.mainPageService.invalidateUserSession();
   }
 
   private setBodyBakcground(): void {

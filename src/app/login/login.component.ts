@@ -2,6 +2,7 @@ import { Component, OnInit, ElementRef, AfterViewInit, Renderer2 } from '@angula
 import { LoginService } from './login.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
 
   loginForm: FormGroup;
   
-  constructor(private formBuilder: FormBuilder, private loginService: LoginService, private rendered: Renderer2, private elementReference: ElementRef) { }
+  constructor(private router: Router, private route: ActivatedRoute,  private formBuilder: FormBuilder, private loginService: LoginService, private rendered: Renderer2, private elementReference: ElementRef) { }
 
   ngOnInit() {
     this.buildLoginForm();
@@ -43,7 +44,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
     });
 
     if(isAuthenticated.status == true) {
-      
+      this.router.navigate(['/main'], {relativeTo: this.route});
     } else {
       Swal.fire('Ooops', isAuthenticated.message, 'error');
     }
