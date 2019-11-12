@@ -1,12 +1,29 @@
-<div class="row justify-content-md-center bg-dark">
+<div *ngIf="isBannerHeader();" class="container-fluid">
+  <div class="row justify-content-md-center bg-dark">
     <div class="col-sm text-center">
-        <img height="100px" width="200px" src="../../assets/images/tech-transparent-logo.png"/>
-       <div class="container-fluid bg-dark">
-         <div class="row">
-            <div class="col-md-6 justify-content-md-center">
-            
-            </div>
-        </div>
-      </div>
+      <img height="100px" width="200px" src="../../assets/images/tech-transparent-logo.png"/>
     </div>
- </div>
+  </div>
+</div>
+
+
+<div *ngIf="isLoggedHeader();" class="pos-f-t">
+  <nav class="navbar navbar-dark bg-dark"> 
+      <div class="col-sm-2 text-left">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Menu Principal">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+      </div>
+      <div class="col-sm-10 text-right">
+        <span><b>Juan Eduardo Domingos</b></span>
+        <span class="ml-2"><fa name="cog" animation="spin"></fa></span>
+      </div>
+  </nav>
+  <div class="collapse" id="mainMenu">
+    <div class="bg-dark p-4 logged-menu-width">
+      <h5 class="text-white h4">Menu</h5>
+      <span class="text-muted">Expansível, atráves da marca no navbar.</span>
+    </div>
+  </div>
+</div>
+
