@@ -15,14 +15,22 @@
             </button>
       </div>
       <div class="col-sm-10 text-right">
-        <span><b>Juan Eduardo Domingos</b></span>
-        <span class="ml-2"><fa name="cog" animation="spin"></fa></span>
+        <span><label class="user-name mr-4"><b>Bem Vindo(a), {{getUserName()}}</b></label></span>
+        <span><label class="user-name ml-4"><b>Sair</b></label></span>
+        <span class="ml-2"><fa class="logout-icon" name="sign-out"></fa></span>
       </div>
   </nav>
   <div class="collapse" id="mainMenu">
-    <div class="bg-dark p-4 logged-menu-width">
-      <h5 class="text-white h4">Menu</h5>
-      <span class="text-muted">Expansível, atráves da marca no navbar.</span>
+    <div class="bg-light p-4 logged-menu-width">
+      <div class="row justify-content-md-center">
+        <img title="user-profile-image" alt="user" height="100px;" width="100px;" class="img-responsive img-circle mt-2" src="../../assets/images/default-profile-icon.png">
+      </div>
+      <div class="row justify-content-md-center mt-4">
+        <span><label class="menu-label"><b>{{getUserName()}}</b></label></span>
+      </div>
+      <div class="row justify-content-md-center mt-2">
+        <span><label class="menu-label"><b>Administrador</b></label></span>
+      </div>
     </div>
   </div>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { SessionVariables } from '../shared/enum/session-variables';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +9,8 @@ import { Component, OnInit, Input } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   @Input() headerType: string;
+
+  userData = JSON.parse(sessionStorage.getItem(SessionVariables.USER_SESSION));
 
   constructor() { }
 
@@ -19,5 +22,9 @@ export class HeaderComponent implements OnInit {
 
   isLoggedHeader(): boolean{
     return this.headerType == "logged";
+  }
+
+  getUserName(): String {
+    return `${this.userData.user.userName} ${this.userData.user.userSurname}`;
   }
 }

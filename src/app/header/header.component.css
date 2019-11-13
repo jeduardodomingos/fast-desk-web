@@ -1,3 +1,25 @@
+.img-circle {
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.logout-icon {
+    cursor: pointer;
+    color: whitesmoke;
+}
+
+.user-name {
+    color: whitesmoke;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+.menu-label {
+    color: darkslategrey;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
 .logged-menu-width {
     max-width: 100%;
 }

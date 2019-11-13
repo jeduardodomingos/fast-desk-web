@@ -24,7 +24,7 @@ export class LoginService {
       let userData = JSON.parse(response._body);
 
       let loginModel = new LoginModel(
-        new UserModel(userData.id, userData.name, userData.surname, userData.email, new Date(userData.bornDate)),
+        new UserModel(userData.user.id, userData.user.name, userData.user.surname, userData.user.email, new Date(userData.user.bornDate)),
         userData.token,
         true,
         new Date()
@@ -37,7 +37,6 @@ export class LoginService {
       }
 
       }catch(ex) {
-        console.log(ex);
         loggedIn = {status: false, message: ex.status == 401? 'Usuário e/ou senha inválidos, por favor verifique as informações e tente novamente.' : 'Erro ao realizar autenticação, por favor contate o administrador do sistema.'};
      }
 
